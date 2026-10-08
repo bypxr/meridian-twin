@@ -4,7 +4,7 @@ A digital twin of a simulated airline. It shows what a storm, a fuel spike or a 
 
 Built by Pratyush Mudgal for the Deloitte AI Innovation Analyst interview, October 2026.
 
-**Live demo:** open `app/index.html` in a browser (one self contained file), or use the hosted link in the submission email. The Ask tab and the AI briefings need the hosted claude.ai version. Everything else runs offline.
+**Live demo:** open `app/index.html` in a browser (one self contained file). `app/pitch.html` is the five slide pitch with the same product inside it (arrow keys to move, L for the live product, F for the FAQ, N for notes). Hosted versions: [prototype](https://claude.ai/artifact/8QmqXSMdzSK5septTZTuUj) and [pitch](https://claude.ai/artifact/TqTEn2e1YeK7bkVwq2vfAS). The Ask tab and the AI briefings need the hosted claude.ai version. Everything else runs offline.
 
 > Meridian Air is not a real airline. Airports, distances, flight delays and fuel prices are real public data. Fares, loads and costs are planning assumptions, set so the network earns about a 6% margin at Brent $90.
 
@@ -34,6 +34,8 @@ Scaling is linear in fleet size. That is a simplification: hub structure and sto
 
 ```
 app/index.html          the built prototype (open it, nothing to install)
+app/pitch.html          five slide pitch with the live prototype and FAQ built in
+pitch/                  slide layer, FAQ source, build_pitch.py
 src/                    simulator (sim.js), UI parts, page template, trained model, build.py
 evidence/
   01_prepare.py         BTS on time data + ASOS weather -> flights.parquet (7.5M flights, Jul 2025 to Jul 2026)
@@ -52,6 +54,7 @@ FAQ.md                  the questions an interviewer or a client will ask
 ```bash
 npm test                      # 8 simulator and model checks, no dependencies (Node 18+)
 python3 src/build.py          # rebuild app/index.html after editing src/
+python3 pitch/build_pitch.py  # rebuild app/pitch.html
 npm run value                 # rerun the storm value study
 
 # full evidence pipeline (Python 3.10+, pandas, pyarrow, scikit-learn, scipy; about 8 GB RAM)
