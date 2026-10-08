@@ -1,0 +1,31 @@
+{
+ "calibration": {
+  "mh": 347274,
+  "mb": 250653,
+  "save": 96620,
+  "pct": 27.8,
+  "wins": 36,
+  "hrs": 2194,
+  "annualBase": 1159444,
+  "low": 289861,
+  "high": 2898610,
+  "ids": {
+   "profit": 35,
+   "reset": 1
+  }
+ },
+ "today": {
+  "mh": 355866,
+  "mb": 245769,
+  "save": 110096,
+  "pct": 30.9,
+  "wins": 36,
+  "hrs": 2205,
+  "annualBase": 1321154,
+  "low": 330288,
+  "high": 3302884,
+  "ids": {
+   "profit": 36
+  }
+ }
+}

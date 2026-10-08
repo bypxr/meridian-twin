@@ -1,0 +1,7 @@
+{
+  "name": "meridian-twin",
+  "version": "1.0.0",
+  "description": "A digital twin of a simulated airline: storm recovery, fuel risk and a delay model tested on July 2026 US flights.",
+  "scripts": { "build": "python3 src/build.py", "test": "node --test tests/*.test.js", "value": "node evidence/04_value_study.js" },
+  "license": "MIT"
+}

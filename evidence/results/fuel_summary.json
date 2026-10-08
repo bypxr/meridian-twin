@@ -1,0 +1,22 @@
+{
+ "asOf": "2026-10-06",
+ "brent": 125.44,
+ "jet": 4.342,
+ "crack": 1.355,
+ "trailing12": {
+  "brent": 87.067,
+  "jet": 3.109,
+  "crack": 1.036
+ },
+ "crackAvg2019to2025": 0.458,
+ "brentChangeSince2025": 1.045,
+ "jetChangeSince2025": 1.272,
+ "brent2026Low": [
+  "2026-01-07",
+  61.08
+ ],
+ "brent2026High": [
+  "2026-04-07",
+  138.21
+ ]
+}

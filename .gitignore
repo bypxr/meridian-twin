@@ -1,0 +1,7 @@
+data/raw/
+data/out/
+*.parquet
+*.zip
+node_modules/
+__pycache__/
+.DS_Store
