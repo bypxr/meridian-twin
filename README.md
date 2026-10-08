@@ -76,7 +76,7 @@ python3 evidence/03_fuel.py data/raw/brent.csv data/raw/jet.csv
 - The airline is simulated. The value study compares the twin with waiting it out, which is a weak baseline; real ops teams already do better than that, which is why the capture rate is 20% to 60%, not 100%.
 - Crew legality and aircraft swaps are simplified. Maintenance, gates and connecting passengers are not modelled.
 - Weather adds only about 0.008 AUC on top of the other inputs, and covers about half of 2026 flights.
-- July 2026 ran later than the training months (28% late against 22%), so the raw model under predicts by 1 to 3 points per tenth. The page applies a one number base rate correction. A live version retrains monthly.
+- July 2026 ran later than the training months (28% late against 22%), so the raw model underpredicts by 1 to 3 points per tenth. The page applies a one number base rate correction. A live version retrains monthly.
 - No controller has used it. The proposal's first gate is a shadow run against real decisions.
 
 ## License

@@ -22,6 +22,14 @@ Claude explains plans, drafts passenger notices, argues each option from a finan
 
 ## The numbers
 
+**What do the three headline numbers mean?**
+
+$97k: on an average storm day the airline loses $347k if it just waits, and $251k with the twin's best plan, so the twin saves $97k (28%). It was tested on 36 simulated ground stops. 77%: take the tenth of flights the model ranks riskiest two hours before departure, and 77% of them ran late, against 28% of all flights (612,038 real flights in July 2026, a month the model never saw). $5.7M: the storm saving scaled to a 300 aircraft airline over a year, assuming 30 storm days and that a real operations team captures 40% of the gap.
+
+**Is a 1% cut in late minutes realistic?**
+
+It is a unit of value, not a forecast. Routine delays cost this network about $418k a day, so each 1% cut is worth about $1.5M a year (about $7.5M for 300 aircraft). How much of that the twin delivers is exactly what the shadow run in the pilot measures.
+
 **How did you get $97k saved per storm day?**
 
 I ran 36 seeded ground stops at ATL, ORD and DFW, from one to six hours. Waiting it out costs $347k on an average storm day. The twin's best plan costs $251k. The gap is $97k, or 28%, and the twin found a cheaper plan on all 36 days. At today's fuel price the gap is $110k, or 31%.
@@ -36,7 +44,7 @@ Yes, and I say so. That is why the annual figure only counts 20% to 60% of the g
 
 **How accurate is the delay model?**
 
-Tested on 612,038 July 2026 flights it never saw. AUC 0.767 (95% range 0.761 to 0.772). The riskiest tenth it flags ran 77% late against 28% overall, a 2.7x lift, and flagging the riskiest fifth catches 46% of late flights. A history only baseline scores 0.678.
+Tested on 612,038 July 2026 flights it never saw. AUC 0.767 (95% range 0.761 to 0.772). The riskiest tenth it flags ran 77% late against 28% overall, a 2.7x lift, and flagging the riskiest fifth catches 46% of late flights. A baseline that uses only history scores 0.678. AUC is the chance the model ranks a late flight above an on time one, so 0.5 is a coin flip and 1.0 is perfect.
 
 **Why use the logistic model if gradient boosting scores 0.80?**
 
@@ -48,7 +56,7 @@ Less than people expect. Adding weather to boosting moves AUC from 0.794 to 0.80
 
 **Is the model biased by when it was trained?**
 
-July 2026 ran later than the training months (28% late against 22%), so the raw model under predicts by 1 to 3 points in every tenth. I show that on the Risk tab, correct it with one base rate number, and the proposal retrains monthly.
+July 2026 ran later than the training months (28% late against 22%), so the raw model underpredicts by 1 to 3 points in every tenth. I show that on the Risk tab, correct it with one base rate number, and the proposal retrains monthly.
 
 **Where does the $98.41 per minute come from?**
 

@@ -71,27 +71,27 @@
 <div id="deck" role="region" aria-label="Presentation">
  <div class="vp"><div class="stg" id="stg">
 
-  <section class="sl on" data-n="Open with the problem, not me. One storm afternoon at a hub costs real money, and today fuel is the other shock. Three numbers, all measured, all reproducible. Then straight into why.">
+  <section class="sl on" data-n="Open with the problem, not me. One storm afternoon at a hub costs real money, and fuel is the second shock. Three headline numbers, each measured and reproducible. First: the saving on an average storm day, from 36 simulated storms. Second: how well the model warns of late flights, tested on a month it never saw. Third: that saving scaled to a mid size airline. Then straight into why.">
    <div class="kick">Deloitte AI Innovation · Pratyush Mudgal</div>
    <h1>Meridian Twin</h1>
-   <p class="lead">An AI digital twin that turns airline disruption into a decision worth money, and keeps a person in charge.</p>
+   <p class="lead">An AI digital twin that shows an airline what disruption will cost, finds the cheapest way out, and leaves every decision to a person.</p>
    <div class="big3">
-    <div><b>$97k</b><span>saved per storm day, 28% of its cost, on 36 of 36 test storms</span></div>
-    <div><b>77%</b><span>of the flights it flags ran late in July 2026, against 28% overall</span></div>
-    <div><b>$32M</b><span>annual profit swing for every $10 on Brent, and Brent is $125 today</span></div>
+    <div><b>$97k</b><span>saved on an average storm day, 28% less than waiting it out</span></div>
+    <div><b>77%</b><span>of the flights it ranks riskiest ran late, against 28% of all flights in July 2026</span></div>
+    <div><b>$5.7M</b><span>a year from storm recovery alone for a 300 aircraft airline (base case)</span></div>
    </div>
-   <div class="foot"><span>Real data: 7.5M US flights to July 2026 · EIA fuel prices to Oct 6, 2026</span><span>github.com/bypxr/meridian-twin</span></div>
+   <div class="foot"><span>36 simulated storms · 612,038 real July 2026 flights · EIA fuel prices to Oct 6, 2026</span><span>github.com/bypxr/meridian-twin</span></div>
   </section>
 
-  <section class="sl" data-n="Same 61 aircraft airline in each column. Storms: waiting it out is what happens without a tool. Delays: exposure, not savings. Fuel: this is the energy insight. Jet is up about 127% since the end of 2025, and the refining margin is three times its normal level.">
+  <section class="sl" data-n="Same simulated 61 aircraft airline in all three cards. Storms: waiting it out is what happens without a tool, so the saving is measured against that. Delays: this is the cost the airline carries every day, not a saving. Fuel: this is the energy insight. Jet fuel is up about 127% since the end of 2025 and the refining margin is three times its normal level. Fares are held unchanged here, so the card shows the pressure on margin, and the fare rise needed to relieve it.">
    <div class="kick">The problem, in dollars</div>
-   <h2>Airlines leak money in three places</h2>
+   <h2>Airlines lose money in three places</h2>
    <div class="leak">
-    <div><h3>Storms</h3><b>$347k</b><p>cost of one average storm day if the airline waits it out</p><p class="fix">Twin plan: $251k. Saves $97k.</p></div>
-    <div><h3>Delays</h3><b>$418k</b><p>routine delay cost a day, at 72 minutes per late flight and $98.41 a minute</p><p class="fix">Flags the riskiest flights 2 hours ahead.</p></div>
-    <div><h3>Fuel</h3><b class="neg">&minus;$300k</b><p>daily profit at today's Brent $125 and jet $4.34. 42 of 49 routes under water</p><p class="fix">Fares need +14.4% to earn 6% again.</p></div>
+    <div><h3>Storms</h3><b>$347k</b><p>what an average storm day costs when the airline simply waits it out</p><p class="fix">With the twin: $251k. A saving of $97k.</p></div>
+    <div><h3>Delays</h3><b>$418k</b><p>a day in routine delay costs: about 59 late flights, 72 minutes each, at $98.41 a minute</p><p class="fix">Ranks the riskiest flights 2 hours ahead.</p></div>
+    <div><h3>Fuel</h3><b class="neg">&minus;$300k</b><p>a day at today's oil price (Brent $125) with fares unchanged. 42 of 49 routes lose money</p><p class="fix">Fares must rise 14.4% to earn 6% again.</p></div>
    </div>
-   <div class="foot"><span>One simulated airline, 61 aircraft, 178 flights a day, hubs at ATL, ORD and DFW</span><span>2 / 5</span></div>
+   <div class="foot"><span>One simulated airline: 61 aircraft, 178 flights a day, hubs at ATL, ORD and DFW</span><span>2 / 5</span></div>
   </section>
 
   <section class="sl" data-n="This is the core of the presentation. Click launch and drive the product for about eight minutes. Path: Fuel today, Risk, Storm at O'Hare, approve a plan, then ask Claude a question. Press Esc or the Slides button to return.">
@@ -99,46 +99,46 @@
    <h2>The product is live, right here</h2>
    <div class="demo">
     <ol class="steps">
-     <li><span><b>Fuel.</b> Set today's price. Watch the network turn red and see which routes to reprice first.</span></li>
-     <li><span><b>Risk.</b> A model tested on 612,038 July 2026 flights ranks every departure two hours ahead.</span></li>
-     <li><span><b>Storm.</b> Close O'Hare for four hours. The twin tests thousands of recoveries and lays out the trade.</span></li>
-     <li><span><b>Ask.</b> Claude explains the plan and drafts the passenger notice. It cannot approve. A person does.</span></li>
+     <li><span><b>Fuel.</b> Set today's oil price and watch the routes that lose money turn red.</span></li>
+     <li><span><b>Risk.</b> A model tested on 612,038 real July 2026 flights ranks every departure two hours ahead.</span></li>
+     <li><span><b>Storm.</b> Close O'Hare for four hours. The twin tests thousands of recoveries and shows the trade between money and passengers.</span></li>
+     <li><span><b>Ask.</b> Claude explains the plan and drafts the passenger notice. It cannot approve a plan. A person does.</span></li>
     </ol>
     <div class="launch"><button id="goLive" type="button">Launch the live twin &#9654;</button><small>Everything runs in this page. Press Esc to come back to the slides.</small></div>
    </div>
    <div class="foot"><span>Simulator, delay model, fuel layer and Claude advisor in one page</span><span>3 / 5</span></div>
   </section>
 
-  <section class="sl tight" data-n="Scale is linear in fleet as a first cut. The 300 aircraft row is a mid size carrier. The fuel column is exposure the twin makes visible, not a saving. The revenue lever is repricing: the twin ranks routes by breakeven.">
-   <div class="kick">Impact and revenue</div>
-   <h2>What it is worth a year</h2>
+  <section class="sl tight" data-n="Read it left to right. The storm number is the saving against waiting it out, scaled by fleet size, with the range shown. The late minutes column is a unit of value: what each 1% cut in late minutes is worth, not a forecast of how many the twin will cut. The pilot measures that. Fuel is a risk the twin makes visible, not a saving, so it sits in the card below. The 300 aircraft row is a mid size airline.">
+   <div class="kick">Impact in dollars</div>
+   <h2>What it could save an airline each year</h2>
    <table class="val">
-    <thead><tr><th>Fleet</th><th>Storm recovery saved</th><th>Each 1% fewer late minutes</th><th>Profit moved per $10 Brent</th></tr></thead>
+    <thead><tr><th>Airline size</th><th>Storm recovery</th><th>Range</th><th>Each 1% cut in late minutes</th></tr></thead>
     <tbody>
-     <tr><td>61 aircraft (this twin)</td><td>$1.2M</td><td>$1.5M</td><td>$32M</td></tr>
-     <tr><td>150 aircraft</td><td>$2.9M</td><td>$3.8M</td><td>$80M</td></tr>
-     <tr class="hi"><td>300 aircraft</td><td>$5.7M</td><td>$7.5M</td><td>$159M</td></tr>
-     <tr><td>800 aircraft</td><td>$15.2M</td><td>$20.0M</td><td>$424M</td></tr>
+     <tr><td>61 aircraft (this twin)</td><td>$1.2M</td><td>$0.3M to $2.9M</td><td>$1.5M</td></tr>
+     <tr><td>150 aircraft</td><td>$2.9M</td><td>$0.7M to $7.1M</td><td>$3.8M</td></tr>
+     <tr class="hi"><td>300 aircraft</td><td>$5.7M</td><td>$1.4M to $14.3M</td><td>$7.5M</td></tr>
+     <tr><td>800 aircraft</td><td>$15.2M</td><td>$3.8M to $38.0M</td><td>$20.0M</td></tr>
     </tbody>
    </table>
    <div class="rev">
-    <div><b>Protect revenue</b>At today's fuel the twin shows which routes go under first and the fare rise that restores margin, route by route.</div>
-    <div><b>Range, not a promise</b>Storm value runs from $0.3M to $2.9M at 61 aircraft: 15 to 50 storm days, 20% to 60% captured.</div>
+    <div><b>How the storm number is built</b>30 storm days a year, times the $97k saving per storm day, times the 40% a real operations team captures. The range uses 15 to 50 days and 20% to 60%.</div>
+    <div><b>Fuel is a risk, not a saving</b>Every $10 on oil moves a 300 aircraft airline's yearly profit by $159M. The twin shows which routes lose money first and how far fares must rise.</div>
    </div>
-   <div class="foot"><span>Base case: 30 storm days a year, 40% of the gap captured. Today's fuel adds about 14% to storm savings</span><span>4 / 5</span></div>
+   <div class="foot"><span>The simulated airline scaled by fleet size. A pilot replaces these estimates with measured figures</span><span>4 / 5</span></div>
   </section>
 
-  <section class="sl" data-n="End on the ask. The prototype gives an estimate. The pilot gives a measurement a finance team signs. Then name the reuse: the same pattern for energy, healthcare, government and telecom. Then open the floor. The FAQ button has 22 prepared answers.">
+  <section class="sl" data-n="End on the ask. The prototype gives an estimate. The pilot gives a measurement that a finance team can sign off. Then name the reuse: the same pattern for energy, healthcare, government and telecom. Then open the floor. The FAQ button holds the prepared answers.">
    <div class="kick">The ask</div>
-   <h2 style="max-width:1450px">One hub. 26 weeks.<br>A saving finance signs.</h2>
+   <h2 style="max-width:1450px">One hub. 26 weeks.<br>A saving finance can sign off.</h2>
    <div class="tl">
     <div><b>Discover</b>Weeks 1 to 3</div>
-    <div><b>Connect</b>Weeks 4 to 9, the client's ops, crew and cost data</div>
+    <div><b>Connect</b>Weeks 4 to 9, the client's operations, crew and cost data</div>
     <div><b>Model</b>Weeks 8 to 15, rebuild the twin and retrain on their flights</div>
     <div><b>Shadow</b>Weeks 16 to 21, run beside real controllers</div>
     <div><b>Assist</b>Weeks 22 to 26, a person approves every plan</div>
    </div>
-   <p class="lead">Then reuse the pattern: simulate the operation, optimize the response, let AI explain it, keep a person in charge.</p>
+   <p class="lead">The same pattern then carries to other sectors: simulate the operation, find the best response, let AI explain it, keep a person in charge.</p>
    <div class="sect"><span>Energy: grid outages and fuel cost</span><span>Healthcare: bed and theatre recovery</span><span>Government: transit and emergency response</span><span>Telecom: outage triage</span></div>
    <div class="foot"><span>Pratyush Mudgal · Questions welcome</span><span>5 / 5</span></div>
   </section>
@@ -155,7 +155,7 @@
  </div>
 </div>
 <div id="liveBar" hidden><button type="button" id="lBack">&#9664; Slides</button><button type="button" id="lFaq">FAQ</button><button type="button" id="lNext" class="go">Impact &#9654;</button></div>
-<div id="faqBox" hidden><div class="pn" role="dialog" aria-label="FAQ"><div class="hd"><h2>FAQ</h2><button type="button" class="x" id="fClose">Close</button></div><input id="fQ" type="search" placeholder="Search the 22 answers"><div class="ls" id="fList"></div></div></div>
+<div id="faqBox" hidden><div class="pn" role="dialog" aria-label="FAQ"><div class="hd"><h2>FAQ</h2><button type="button" class="x" id="fClose">Close</button></div><input id="fQ" type="search" placeholder="Search the answers"><div class="ls" id="fList"></div></div></div>
 <script>
 (function(){
  var FAQ=__FAQ__;
