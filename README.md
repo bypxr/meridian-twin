@@ -4,7 +4,7 @@ A digital twin of a simulated airline. It shows what a storm, a fuel spike or a 
 
 Built by Pratyush Mudgal for the Deloitte AI Innovation Analyst interview, October 2026.
 
-**Live demo:** open `app/index.html` in a browser (one self contained file). `app/pitch.html` is the five slide pitch with the same product inside it (arrow keys to move, L for the live product, F for the FAQ, N for notes). Hosted versions: [prototype](https://claude.ai/artifact/8QmqXSMdzSK5septTZTuUj) and [pitch](https://claude.ai/artifact/TqTEn2e1YeK7bkVwq2vfAS). The Ask tab and the AI briefings need the hosted claude.ai version. Everything else runs offline.
+**Live demo:** [bypxr.github.io/meridian-twin](https://bypxr.github.io/meridian-twin/) opens the five slide pitch with the live product inside (arrow keys to move, L for the live product, F for the FAQ, N for speaker notes). The product alone: [app/index.html](https://bypxr.github.io/meridian-twin/app/index.html). Both are single self contained files. The Ask tab and AI briefings use Claude, so they work in the claude.ai hosted version; everything else runs anywhere, offline included.
 
 > Meridian Air is not a real airline. Airports, distances, flight delays and fuel prices are real public data. Fares, loads and costs are planning assumptions, set so the network earns about a 6% margin at Brent $90.
 
