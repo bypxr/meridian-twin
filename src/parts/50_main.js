@@ -42,7 +42,7 @@ function frame(now){
   requestAnimationFrame(frame);
 }
 function init(){
-  $('foot').innerHTML='Built by Pratyush Mudgal as a working prototype. Meridian Air is not a real airline. Airports and distances are real. Fares, loads and costs are planning assumptions, set so the network earns about a 6% margin. Delay cost uses the Airlines for America 2025 figure of $98.41 per block minute. Fuel presets come from US EIA spot prices through October 6, 2026. The delay model is trained on public US DOT on time data from July 2025 to June 2026 and tested on July 2026. The simulator is deterministic. Claude never computes a figure and cannot approve a plan.';
+  $('foot').innerHTML='Built by Pratyush Mudgal as a working prototype. Meridian Air is not a real airline. Airports and distances are real. Fares, loads and costs are planning assumptions, set so the network earns about a 6% margin. Delay cost uses the Airlines for America 2025 figure of $98.41 per block minute. Fuel presets come from US EIA spot prices for October 6, 2026. Brent spot is the physical price, well above the Brent futures price quoted in headlines (near $105). The delay model is trained on public US DOT on time data from July 2025 to June 2026 and tested on July 2026. The simulator is deterministic. Claude never computes a figure and cannot approve a plan.';
   recompute();renderTabs();renderBody();renderModes();renderStory();
   $('play').onclick=()=>{S.playing=!S.playing;$('play').textContent=S.playing?'Pause':'Play'};
   $('scrub').oninput=e=>{S.t=+e.target.value};

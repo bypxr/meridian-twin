@@ -32,7 +32,7 @@ It is a unit of value, not a forecast. Routine delays cost this network about $4
 
 **How did you get $97k saved per storm day?**
 
-I ran 36 seeded ground stops at ATL, ORD and DFW, from one to six hours. Waiting it out costs $347k on an average storm day. The twin's best plan costs $251k. The gap is $97k, or 28%, and the twin found a cheaper plan on all 36 days. At today's fuel price the gap is $110k, or 31%.
+I ran 36 seeded ground stops at ATL, ORD and DFW, from one to six hours. Waiting it out costs $347k on an average storm day. The twin's best plan costs $251k. The gap is $97k, or 28%, and the twin found a cheaper plan on all 36 days. At the October 6, 2026 jet fuel price the gap is $110k, or 31%.
 
 **How do you turn that into $1.2M a year?**
 
@@ -62,9 +62,9 @@ July 2026 ran later than the training months (28% late against 22%), so the raw 
 
 Airlines for America's 2025 average US passenger airline cost per block minute. Applied to expected late flights and the 72 minute average delay of a late 2026 flight, routine delay exposure is about $418k a day for this network, so each 1% of late minutes is worth about $1.5M a year.
 
-**What does today's fuel price mean for an airline?**
+**What do October's fuel prices mean for an airline?**
 
-On October 6, 2026 Brent was $125 and Gulf Coast jet $4.34 a gallon, up about 104% and 127% since the end of 2025, with the refining margin at $1.36 against $0.46 on average in 2019 to 2025. At those prices this network loses about $300k a day, 42 of 49 routes are under water, and fares need to rise about 14.4% to earn 6% again. Every $10 on Brent moves annual profit by $32M.
+On October 6, 2026 (US EIA spot prices) Gulf Coast jet fuel was $4.34 a gallon and Brent spot was $125, up about 104% and 127% since the end of 2025. Brent spot is the physical price. The futures price in headlines was lower, near $105, because physical oil has sold at a large premium since the Strait of Hormuz disruption. Airlines buy jet in the physical market, so I use spot. The refining margin (jet minus Brent spot) was $1.36 against $0.46 on average in 2019 to 2025. At those prices this network loses about $300k a day, 42 of 49 routes are under water, and fares need to rise about 14.4% to earn 6% again. Every $10 on Brent moves annual profit by $32M. The loss figures depend only on the jet price, not on which Brent price is quoted.
 
 **How do these numbers scale to a real airline?**
 

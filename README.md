@@ -13,11 +13,11 @@ Built by Pratyush Mudgal for the Deloitte AI Innovation Analyst interview, Octob
 | What it does | Result in this twin (61 aircraft) | How it was measured |
 |---|---|---|
 | Storm recovery | **$97k saved per storm day** (28% of the storm's cost), better plan found on **36 of 36** test storms, 2,194 passenger delay hours cut per storm day | `evidence/04_value_study.js`, 36 seeded storms at ATL, ORD, DFW |
-| Same, at today's fuel | **$110k per storm day** (31%), 36 of 36 | same study at Brent $125.44, crack $1.355 |
+| Same, at October 6, 2026 spot fuel | **$110k per storm day** (31%), 36 of 36 | same study at EIA spot: Brent $125.44, crack $1.355 (jet $4.34) |
 | Annual storm value | $0.3M low, **$1.2M base**, $2.9M high | 15, 30, 50 storm days a year × 20%, 40%, 60% of the gap a real ops team captures |
 | Delay risk model | **AUC 0.767** on 612,038 July 2026 flights it never saw. Its riskiest tenth ran **77% late** against 28% overall (2.7x). Flagging the riskiest fifth catches 46% of late flights | `evidence/02_train.py`, real US DOT data |
 | Routine delay exposure | about $418k a day, so each 1% of late minutes cut is worth **$1.5M a year** | expected late flights × 72 min average × $98.41 per block minute (Airlines for America) |
-| Fuel risk | **$32M** of annual profit moves with every $10 on Brent. At today's prices (Brent $125, jet $4.34) the network **loses about $300k a day** and needs fares **14.4%** higher to earn 6% again; 42 of 49 routes are under water | `Sim.network`, exact because profit is linear in the jet price |
+| Fuel risk | **$32M** of annual profit moves with every $10 on Brent. At October 6, 2026 EIA spot prices (jet $4.34, Brent spot $125; Brent futures were near $105) the network **loses about $300k a day** and needs fares **14.4%** higher to earn 6% again; 42 of 49 routes are under water | `Sim.network`, exact because profit is linear in the jet price |
 
 Scaled to airline size (base case, calibration fuel):
 
@@ -40,7 +40,7 @@ src/                    simulator (sim.js), UI parts, page template, trained mod
 evidence/
   01_prepare.py         BTS on time data + ASOS weather -> flights.parquet (7.5M flights, Jul 2025 to Jul 2026)
   02_train.py           baseline, logistic ladder, gradient boosting; out of time test on July 2026
-  03_fuel.py            EIA Brent and Gulf Coast jet spot prices -> today's fuel, crack spread, trailing averages
+  03_fuel.py            EIA Brent and Gulf Coast jet spot prices -> October 6 spot fuel, crack spread, trailing averages
   04_value_study.js     36 seeded storms, twin plan against waiting it out, at two fuel prices
   results/              metrics.json, model_raw.json, fuel_summary.json, value_study.json
 tests/sim.test.js       determinism, linear profit, exact breakevens, no double booked aircraft, model sanity

@@ -34,7 +34,7 @@ function renderModes(){
 // ---------- story ----------
 const STORY=[
  {t:'A normal day at Meridian Air',d:'61 aircraft, 178 flights, three hubs. Every number on this page comes from a simulator, so it can be checked. Drag the globe. Click any plane.',go(){clearStorm();S.P.brent=90;S.P.crack=0.75;S.mode='status';S.tab='overview';S.t=560;flyTo(-96,36,1.55)}},
- {t:'Oil is the swing factor',d:'On October 6, 2026 Brent is $125 and jet fuel is $4.34 a gallon, against about $2.90 when this network was priced to earn 6%. At today’s prices it loses money. The twin shows which routes go under first.',go(){clearStorm();S.P.brent=125;S.P.crack=1.36;S.mode='profit';S.tab='fuel';flyTo(-96,36,1.7)}},
+ {t:'Oil is the swing factor',d:'On October 6, 2026 jet fuel is $4.34 a gallon (Brent spot $125, futures near $105), against about $2.90 when this network was priced to earn 6%. At those prices it loses money. The twin shows which routes go under first.',go(){clearStorm();S.P.brent=125;S.P.crack=1.36;S.mode='profit';S.tab='fuel';flyTo(-96,36,1.7)}},
  {t:'Which flights will run late today',d:'A model trained on 7 million real DOT flights scores every departure. In July 2026, a month it never saw, its riskiest tenth ran late 77% of the time, against 28% overall.',go(){clearStorm();S.P.brent=90;S.P.crack=0.75;S.mode='risk';S.tab='risk';S.t=900}},
  {t:'A storm closes Chicago',d:'Ground stop at O’Hare, noon to four. Delays roll down every aircraft’s day and crews run out of legal hours. This is the moment that costs airlines millions.',go(){S.P.brent=90;S.P.crack=0.75;S.mode='status';S.tab='storm';S.boardHub='ORD';recompute();runStorm({hub:'ORD',start:720,end:960,sev:1});S.preview='hold';S.approved=null;S.t=700;S.speed=180;$('speed').value='180';flyTo(-92,38,2.2)}},
  {t:'The twin finds better ways out',d:'It tests thousands of cancel and swap combinations in under a second and lays out the trade: money against passengers. Move the sliders to set your own priorities.',go(){if(!S.storm)STORY[3].go();S.tab='storm';S.preview='profit';S.t=Math.max(S.t,760)}},
@@ -133,9 +133,9 @@ function fx2(){
 }
 function vFuel(){
   const p=S.P;
-  $('body').innerHTML='<h2>Fuel and oil risk</h2><p class="hint">Jet fuel $/gal = Brent ÷ 42 + crack spread. Profit is a straight line in the jet price, so every breakeven here is exact. Anchored to US EIA spot prices through October 6, 2026: Brent $125 and Gulf Coast jet $4.34, so the crack spread is about $1.36 against $0.46 on average in 2019 to 2025.</p>'+
-  '<div class="chips">'+[['Today, Oct 6 2026 · $125',125,1.36],['12 month average · $87',87,1.04],['Calibration · $90',90,0.75],['Slump · $60',60,0.75]].map(x=>'<button class="sm" data-b="'+x[1]+'" data-c="'+x[2]+'">'+x[0]+'</button>').join('')+'</div>'+
-  slider('Brent crude','brent',40,160,1,p.brent,FMT.brent)+slider('Crack spread','crack',0.3,2,0.01,p.crack,FMT.crack)+slider('Demand','demand',0.8,1.15,0.01,p.demand,FMT.demand)+
+  $('body').innerHTML='<h2>Fuel and oil risk</h2><p class="hint">Jet fuel $/gal = Brent ÷ 42 + crack spread. Profit is a straight line in the jet price, so every breakeven here is exact. Anchored to US EIA spot prices for October 6, 2026: Gulf Coast jet fuel $4.34 a gallon and Brent spot $125. Brent spot is the physical price. The futures price quoted in headlines was near $105, because physical oil has sold at a large premium since the Strait of Hormuz disruption. Airlines buy jet in the physical market, so the presets use spot, and the crack spread here (jet minus Brent spot) is about $1.36 against $0.46 on average in 2019 to 2025.</p>'+
+  '<div class="chips">'+[['Oct 6 2026 spot · jet $4.34',125,1.36],['12 month average · $87',87,1.04],['Calibration · $90',90,0.75],['Slump · $60',60,0.75]].map(x=>'<button class="sm" data-b="'+x[1]+'" data-c="'+x[2]+'">'+x[0]+'</button>').join('')+'</div>'+
+  slider('Brent crude (spot)','brent',40,160,1,p.brent,FMT.brent)+slider('Crack spread','crack',0.3,2,0.01,p.crack,FMT.crack)+slider('Demand','demand',0.8,1.15,0.01,p.demand,FMT.demand)+
   '<div id="fx1">'+fx1()+'</div>'+
   '<h2 class="gap">Oil price spread</h2><p class="hint" style="margin-bottom:6px">A scenario spread, not a forecast. 2,000 seeded draws around the Brent price above.</p>'+
   slider('Volatility','sigma',0.05,0.6,0.01,S.sigma,FMT.sigma)+'<div id="fx2">'+fx2()+'</div>';
@@ -157,7 +157,7 @@ function lineChart(){
   let s='<svg viewBox="0 0 '+w+' '+h+'" width="100%" role="img" aria-label="Daily profit against Brent price">';
   [-2e6,-1.6e6,-1.2e6,-0.8e6,-0.4e6,0,0.4e6,0.8e6].forEach(v=>{if(v<y0||v>y1)return;s+='<line x1="'+pad.l+'" x2="'+(w-pad.r)+'" y1="'+Y(v)+'" y2="'+Y(v)+'" stroke="'+(v===0?'#5b7399':'#21314d')+'"/><text x="'+(pad.l-5)+'" y="'+(Y(v)+3)+'" text-anchor="end">'+money(v,1)+'</text>'});
   [40,70,100,130,160].forEach(b=>{s+='<text x="'+X(b)+'" y="'+(h-6)+'" text-anchor="middle">$'+b+'</text>'});
-  [[125,'today'],[87,'12 mo avg']].forEach(a=>{s+='<line x1="'+X(a[0])+'" x2="'+X(a[0])+'" y1="'+(h-pad.b-6)+'" y2="'+(h-pad.b)+'" stroke="#8fa1bd"/><text x="'+X(a[0])+'" y="'+(h-pad.b-9)+'" text-anchor="middle">'+a[1]+'</text>'});
+  [[125,'Oct 6'],[87,'12 mo avg']].forEach(a=>{s+='<line x1="'+X(a[0])+'" x2="'+X(a[0])+'" y1="'+(h-pad.b-6)+'" y2="'+(h-pad.b)+'" stroke="#8fa1bd"/><text x="'+X(a[0])+'" y="'+(h-pad.b-9)+'" text-anchor="middle">'+a[1]+'</text>'});
   s+='<path d="M'+X(40)+','+Y(prof(40))+' L'+X(160)+','+Y(prof(160))+'" stroke="#4cc9f0" stroke-width="2" fill="none"/>';
   if(n.breakevenBrent>x0&&n.breakevenBrent<x1)s+='<line x1="'+X(n.breakevenBrent)+'" x2="'+X(n.breakevenBrent)+'" y1="'+pad.t+'" y2="'+(h-pad.b)+'" stroke="#ff6b6b" stroke-dasharray="3 3"/><text x="'+(X(n.breakevenBrent)-4)+'" y="'+(pad.t+9)+'" text-anchor="end" style="fill:#ff6b6b">breakeven $'+n.breakevenBrent.toFixed(0)+'</text>';
   const bx=Math.max(x0,Math.min(x1,S.P.brent));
